@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaon List</title>
+  <link rel="stylesheet" href="villages.css" />
+ <style>
+  
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #013220, #000000);
+      color: white;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .search-container {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 300px;
+      font-size: 18px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1000px;
+      background-color: #0b1f17;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 2px solid #444;
+      font-size: 20 px;
+    }
+
+    th {
+      background-color: #043927;
+      color: #f0ec12;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    tr:hover {
+      background-color: #1c2c27;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* 📱 Responsive Breakpoints */
+@media (max-width: 768px) {
+  th, td {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+  input[type="text"] {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  th, td {
+    padding: 8px 5px;
+    font-size: 12px;
+  }
+  input[type="text"] {
+    font-size: 14px;
+    padding: 8px;
+    width: 100%;
+  }
+}
+ </style>
+
+
+
+
+</head>
+<body>
+
+
+
+  <!-- <h1>📋  Villages List</h1> -->
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search...">
+  </div>
+
+  <table id="gaonTable">
+    <thead>
+      <tr>
+        <th>Vill. No.</th>
+        <th>Village Name</th>
+        <th>P.O Name</th>
+        <th>Pin No.</th>
+        <th>Tahsil</th>
+        <th>District</th>
+        <th>State</th>
+        <th>Voter</th>
+        <th>Rakna/ Land</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Amarpur Garhi</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="https://www.google.com/maps/place/Amarpur+Garhi,+Baghpat,+Uttar+Pradesh/" target="_blank">Amarpur Garhi</a></td></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Deoband</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="https://www.google.com/maps/place/Deoband,+Uttar+Pradesh/" target="_blank">Deoband</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Gunarsi</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+     <td><a href="https://www.google.com/maps/place/Gunarsi,+Uttar+Pradesh/" target="_blank">Gunarsi</a></td>
+  </tr>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Gopali</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+          <td><a href="https://www.google.com/maps/place/Gopali,+Uttar+Pradesh/" target="_blank">Gopali</a></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Imliya</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+            <td><a href="https://www.google.com/maps/place/Imliya,+Uttar+Pradesh/" target="_blank">Imliya</a></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Khanja</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+            <td><a href="https://www.google.com/maps/place/Khanja,+Uttar+Pradesh/" target="_blank">Khanja</a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Labkari</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+       <td><a href="https://www.google.com/maps/place/Labkari,+Uttar+Pradesh/" target="_blank">Labkari</a></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Manki</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+           <td><a href="https://www.google.com/maps/place/Manki,+Uttar+Pradesh/" target="_blank">Manki</a></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Nasrullapur</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+         <td><a href="https://www.google.com/maps/place/Nasrullapur,+Uttar+Pradesh/" target="_blank">Nasrullapur</a></td>
+  </tr>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Paroli</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+           <td><a href="https://www.google.com/maps/place/Paroli,+Uttar+Pradesh/" target="_blank">Paroli</a></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Phulas Akbarpur</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="https://www.google.com/maps/place/Phulas+Akbarpur,+Uttar+Pradesh/" target="_blank">Phulas Akbarpur</a></td>
+  </tr>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Phulasi</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+          <td><a href="https://www.google.com/maps/place/Phulasi,+Uttar+Pradesh/" target="_blank">Phulasi</a></td>
+      <tr>
+        <td>13</td>
+        <td>Rajupur</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+         <td><a href="https://www.google.com/maps/place/Rajupur,+Uttar+Pradesh/" target="_blank">Rajupur</a></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Sanpla Bakkal</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+ <td><a href="https://www.google.com/maps/place/Sanpla+Bakkal,+Uttar+Pradesh/" target="_blank">Sanpla Bakkal</a></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Sanpla Khatri</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+         <td><a href="https://www.google.com/maps/place/Sanpla+Khatri,+Uttar+Pradesh/" target="_blank">Sanpla Khatri</a></td>
+  </tr>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Theetki</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+           <td><a href="https://www.google.com/maps/place/Theetki,+Uttar+Pradesh/" target="_blank">Theetki</a></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Tighri</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+         <td><a href="https://www.google.com/maps/place/Tighri,+Uttar+Pradesh/" target="_blank">Tighri</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const table = document.getElementById("gaonTable");
+    const rows = table.getElementsByTagName("tr");
+
+    searchInput.addEventListener("keyup", function () {
+      const filter = searchInput.value.toLowerCase();
+      for (let i = 1; i < rows.length; i++) {
+        const td = rows[i].getElementsByTagName("td")[1]; // Gaon ka naam column
+        if (td) {
+          const textValue = td.textContent || td.innerText;
+          rows[i].style.display = textValue.toLowerCase().includes(filter) ? "" : "none";
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

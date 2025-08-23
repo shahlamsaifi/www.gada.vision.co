@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaon List</title>
+  <link rel="stylesheet" href="villages.css" />
+ <style>
+  
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #013220, #000000);
+      color: white;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .search-container {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 300px;
+      font-size: 18px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1000px;
+      background-color: #0b1f17;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 2px solid #444;
+      font-size: 20 px;
+    }
+
+    th {
+      background-color: #043927;
+      color: #f0ec12;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    tr:hover {
+      background-color: #1c2c27;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+     .styled-table th {
+    font-size: 14px;
+    text-align: left;
+    color: white;
+  }
+
+    /* 📱 Responsive Breakpoints */
+@media (max-width: 768px) {
+  th, td {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+  input[type="text"] {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  th, td {
+    padding: 8px 5px;
+    font-size: 12px;
+  }
+  input[type="text"] {
+    font-size: 14px;
+    padding: 8px;
+    width: 100%;
+  }
+ 
+}
+ </style>
+
+
+
+
+</head>
+<body>
+
+
+       <table class="styled-table">
+      <thead>
+        <tr>
+          <th>
+1.- School ka full Data ( Name+Students+Teachers+Principal 
+      & Owner Name with Contact No). <br>
+2.- Teachers or Medam (Exam or Test). By Board 
+       Ager unhone ye  clear kar liya tabhi wo teaching Kara
+        saktey hai. Otherwise nhi.<br>
+3.- 4th to 8th class Students Two visit to Library Every Year.<br>
+4.- 4th to 8th class Students one visit to University Every Year.<br>
+5.- All Teachers One visit to Auditorium for Meeting Every 
+       Year.
+</th>
+
+
+  <!-- <h1>📋  Villages List</h1> -->
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search...">
+  </div>
+
+  <table id="gaonTable">
+    <thead>
+      <tr>
+        <th>Village </th>
+        <th>School Name</th>
+        <th>Students</th>
+        <th>Teachers</th>
+        <th>Principal <br> Contact</th>
+        <th>Owner <br> Contact</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Amarpur Garhi</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+       
+      </tr>
+      <tr>
+        <td>Deoband</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Gunarsi</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+ <td>0</td>
+        <td>0</td>
+  </tr>
+      </tr>
+      <tr>
+        <td>Gopali</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+         <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Imliya</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Khanja</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+         <td>0</td>
+        <td>0</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const table = document.getElementById("gaonTable");
+    const rows = table.getElementsByTagName("tr");
+
+    searchInput.addEventListener("keyup", function () {
+      const filter = searchInput.value.toLowerCase();
+      for (let i = 1; i < rows.length; i++) {
+        const td = rows[i].getElementsByTagName("td")[1]; // Gaon ka naam column
+        if (td) {
+          const textValue = td.textContent || td.innerText;
+          rows[i].style.display = textValue.toLowerCase().includes(filter) ? "" : "none";
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

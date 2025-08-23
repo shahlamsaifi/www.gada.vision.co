@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Table Final</title>
+  <link rel="stylesheet" href="Auditorium.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    td .event-name-line {
+      margin-bottom: 4px;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <thead>
+      <tr>
+        <th>S.N.</th>
+        <th>Dated/Weekly</th>
+        <th>Events Name</th>
+        <th>Events Photo</th>
+        <th colspan="2">Organiser Name, Contact & Address</th>
+        <th>Guests Name & Address</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- Row 1 -->
+      <tr>
+        <td rowspan="5">1 TO 48</td>
+        <td rowspan="5">1/1/2030</td>
+        <td rowspan="5">
+          <div class="event-name-line">Hindi</div>
+          <div class="event-name-line">English</div>
+          <div class="event-name-line">Urdu</div>
+        </td>
+        <td rowspan="5">
+          <img src="img/gada bhawan png.png" alt="Event Photo">
+        </td>
+        <td>Name</td>
+        <td>Mr. XYZ</td>
+        <td>Guest 01<br>Address</td>
+      </tr>
+
+      <!-- Row 2 -->
+      <tr>
+        <td>Father</td>
+        <td>Mr. ABC</td>
+        <td>Guest 02<br>Address</td>
+      </tr>
+
+      <!-- Row 3 -->
+      <tr>
+        <td>Contact</td>
+        <td>1234567890<br>9876543210</td>
+        <td>Guest 03<br>Address</td>
+      </tr>
+
+      <!-- Row 4 -->
+      <tr>
+        <td>Email Id.</td>
+        <td>xyz@email.com</td>
+        <td></td>
+      </tr>
+
+      <!-- Row 5 -->
+      <tr>
+        <td>Address</td>
+        <td>123 Main Street</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
