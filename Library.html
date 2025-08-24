@@ -3,258 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Liabrary For 50 Villages</title>
+  <title>Library For 50 Villages</title>
   <style>
-    :root{
-      --grey:#9b9b9b;
-      --dark:#555;
-      --title:#f2a872; /* light orange like the image */
-      --border:#cfcfcf;
-      --yellow:#ffe431; /* footer highlight */
+    :root {
+      --grey: #9b9b9b;
+      --dark: #555;
+      --title: #f2a872;
+      --border: #cfcfcf;
+      --yellow: #ffe431;
     }
-    *{box-sizing:border-box;}
-    body{
-      margin:0; 
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background:#ffffff;
-      color:#222;
+      background: #ffffff;
+      color: #222;
     }
-    .sheet{
-      max-width: 1480px; /* close to screenshot width */
+
+    .sheet {
+      max-width: 1480px;
       margin: 24px auto 40px;
       padding: 0 16px 24px;
       background-color: #0b1f17;
+      border-radius: 10px;
     }
-
-    /* LOGO */
-
 
     /* Title */
-    .title-wrap{ text-align:center;}
-    .title{
+    .title-wrap { text-align: center; }
+    .title {
       margin-top: 20px;
-      display:inline-block;
-      background: var(--title);
-      padding: 10px 18px; 
-      border: 2px solid goldenrod;
-      font-size: 34px; font-weight: 700;
-      color:white; 
-      border-bottom-width: 6px; /* subtle double band look */
-      background-color: #0b1f17;
+      display: inline-block;
+      padding: 10px 18px;
+      font-size: 34px;
+      font-weight: 700;
+      color: goldenrod;
+      border-bottom: 4px solid goldenrod;
     }
-    .subtitle{
-      display:inline-block;
-      margin-top: 4px;
-      background: var(--title);
-      padding: 13px 75px;
-      font-size: 22px;
-      letter-spacing:.4px;
+    .subtitle {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #fff;
       border: 1px solid goldenrod;
-      color:white;
-      background-color: #0b1f17;
+      border-radius: 6px;
     }
 
-    /* Table */
-    .grid{
-      width:100%;
-      border-collapse: separate; 
-      border-spacing: 0;
-      margin-top: 26px;
-      border:1px solid var(--border);
+    /* Table wrapper for scroll */
+    .table-container {
+      width: 100%;
+      overflow-x: auto; /* ✅ mobile me sideways scroll */
     }
-    .grid th, .grid td{
-      border-left:1px solid var(--border);
-      border-top:1px solid var(--border);
-      padding: 14px 14px;
-      vertical-align: middle;
+
+    table.grid {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      min-width: 800px; /* ✅ force scroll on small phones */
+    }
+
+    table.grid th, table.grid td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: center;
       font-size: 16px;
       background: linear-gradient(135deg, #2f5a4c, #2c533b);
-      color: white;
-      
-    }
-    .grid tr:last-child td{border-bottom:1px solid var(--border);} 
-    .grid th:last-child, .grid td:last-child{border-right:1px solid var(--border);} 
-
-    /* Header row like grey blocks with yellow text */
-    .head th{
-      background:#8e8e8e; /* medium grey */
-      color: goldenrod; /* yellow text */
-      text-align:center;
-      font-weight:800;
-      font-size:12px;
-      letter-spacing:.4px;
-      background-color: #0b1f17;
+      color: #fff;
     }
 
-    /* First column labels */
-    .row-label{ font-weight:700; text-align:center; }
-    .day{ font-weight:700; text-align:center; }
-    .students{ font-weight:700; }
-    .organizer{ line-height:1.6; }
+    table.grid thead th {
+      background: #0b1f17;
+      color: goldenrod;
+      font-weight: 800;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
 
-    /* Footer line */
-    .note{
+    .row-label { font-weight: bold; }
+
+    /* Footer note */
+    .note {
       margin-top: 18px;
-      font-weight:800; 
-      color:goldenrod; 
-      background:#2b2b2b; 
-      padding: 10px 14px; 
-      border-radius:4px; 
-      text-align:left; 
-      font-size:18px;
-      background-color: #0b1f17;
+      font-weight: 700;
+      color: goldenrod;
+      background: #222;
+      padding: 12px;
+      border-radius: 6px;
+      text-align: left;
+      font-size: 16px;
     }
 
-    /* Make it stay on one line when possible */
-    .nowrap{ white-space:nowrap; }
-
-    /* Column sizing (approx to screenshot) */
-    colgroup col:nth-child(1){width: 16%;}
-    colgroup col:nth-child(2){width: 17%;}
-    colgroup col:nth-child(3){width: 12%;}
-    colgroup col:nth-child(4){width: 15%;}
-    colgroup col:nth-child(5){width: 20%;}
-    colgroup col:nth-child(6){width: 20%;}
-
-    /* Small screens */
-    @media (max-width: 900px){
-      .grid{font-size:14px;}
-      .head th{font-size:16px;}
-      .title{font-size:26px;}
-      
-      .grid th, .grid td{font-size:15px; padding:12px;}
-      .head th{font-size:16px;}
-    }
-  
-
-    /* Small screens */
-    @media (max-width: 640px){
-      .sheet{padding: 0 10px 20px;}
-      .grid{min-width: 720px;} /* ensure smooth sideways scroll instead of cramping */
-      .grid th, .grid td{font-size:14px; padding:10px;}
-      .head th{font-size:15px;}
-      .subtitle{padding: 4px 10px;}
-    }
-        /* Small screen adjustments */
-    @media (max-width:600px){
-      .logo-box{width:120px; height:100px; font-size:14px;}
-      .title{font-size:13px;}
-      .grid th, .grid td{font-size:12px; padding:6px;}
+    /* 📱 Responsive tweaks */
+    @media (max-width: 900px) {
+      .title { font-size: 26px; }
+      .subtitle { font-size: 16px; padding: 8px 14px; }
+      table.grid th, table.grid td { font-size: 14px; padding: 10px; }
     }
 
-      @media (max-width: 428px){
-        .head th {font-size: 12px;}  
-        .grid th, .grid td {font-size: 12px;}
-        }
-
-    /* Extra small screens */
-    @media (max-width: 420px){
-      .grid{min-width: 390px;}
-      .grid th, .grid td{font-size:13px; padding:8px;}
+    @media (max-width: 600px) {
+      .title { font-size: 22px; }
+      .subtitle { font-size: 14px; }
+      table.grid { min-width: 600px; } /* ✅ phones scroll */
+      table.grid th, table.grid td { font-size: 13px; padding: 8px; }
+      .note { font-size: 14px; }
     }
 
-  
-
-
+    @media (max-width: 400px) {
+      .title { font-size: 18px; }
+      .subtitle { font-size: 12px; padding: 6px 10px; }
+      table.grid { min-width: 480px; } /* ✅ very small phones */
+      table.grid th, table.grid td { font-size: 12px; padding: 6px; }
+    }
   </style>
 </head>
 <body>
   <div class="sheet">
-    <!-- <div class="logo-box">
-      <img src="img/library_logo-1_1-removebg-preview.png">
-    </div> -->
-
     <div class="title-wrap">
-      <div class="title">Liabrary For 50 Villages</div><br>
-      <div class="subtitle">300 / 50 = 6 Main Location</div>
+      <div class="title">Library For 50 Villages</div><br>
+      <div class="subtitle">300 / 50 = 6 Main Locations</div>
     </div>
 
-    <table class="grid">
-      <colgroup>
-        <col><col><col><col><col><col>
-      </colgroup>
-      <thead>
-        <tr class="head">
-          <th>Location - 01</th>
-          <th>Location - 02</th>
-          <th>Location - 03</th>
-          <th>Location - 04</th>
-          <th>Location - 05</th>
-          <th>Location - 06</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="row-label">School</td>
-          <td style="text-align:center">5 Villages Name</td>
-          <td style="text-align:center">Dated</td>
-          <td class="day">Monday</td>
-          <td class="students">Students= 5 to 7</td>
-          <td class="organizer">
-            <div>Organizer Name =</div>
-            <div>Contact No.=</div>
-          </td>
-        </tr>
-        <tr>
-          <td class="row-label">College</td>
-          <td style="text-align:center">5 Villages Name</td>
-          <td style="text-align:center">Dated</td>
-          <td class="day">Tuesday</td>
-          <td class="students">Students= 8 to 12</td>
-          <td class="organizer">
-            <div>Organizer Name =</div>
-            <div>Contact No.=</div>
-          </td>
-        </tr>
-        <tr>
-          <td class="row-label">Masjid</td>
-          <td style="text-align:center">5 Villages Name</td>
-          <td style="text-align:center">Dated</td>
-          <td class="day">Wednesday</td>
-          <td class="students">Students= Quran</td>
-          <td class="organizer">
-            <div>Organizer Name =</div>
-            <div>Contact No.=</div>
-          </td>
-        </tr>
-        <tr>
-          <td class="row-label">Madarsa</td>
-          <td style="text-align:center">5 Villages Name</td>
-          <td style="text-align:center">Dated</td>
-          <td class="day">Thursday</td>
-          <td class="students">Students= All</td>
-          <td class="organizer">
-            <div>Organizer Name =</div>
-            <div>Contact No.=</div>
-          </td>
-        </tr>
-        <tr>
-          <td class="row-label">Other Any Gents</td>
-          <td style="text-align:center">From Anywhere</td>
-          <td style="text-align:center">Dated</td>
-          <td class="day">Friday</td>
-          <td class="students">Anyone</td>
-          <td class="organizer">
-            <div>Organizer Name =</div>
-            <div>Contact No.=</div>
-          </td>
-        </tr>
-        <tr>
-          <td class="row-label">Other Any Ladies</td>
-          <td style="text-align:center">From Anywhere</td>
-          <td style="text-align:center">Dated</td>
-          <td class="day">Saturday</td>
-          <td class="students">Anyone</td>
-          <td class="organizer">
-            <div>Organizer Name =</div>
-            <div>Contact No.=</div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-container">
+      <table class="grid">
+        <thead>
+          <tr>
+            <th>Location - 01</th>
+            <th>Location - 02</th>
+            <th>Location - 03</th>
+            <th>Location - 04</th>
+            <th>Location - 05</th>
+            <th>Location - 06</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>School</td>
+            <td>5 Villages</td>
+            <td>Dated</td>
+            <td>Monday</td>
+            <td>Students = 5 to 7</td>
+            <td>Organizer Name<br>Contact No.</td>
+          </tr>
+          <tr>
+            <td>College</td>
+            <td>5 Villages</td>
+            <td>Dated</td>
+            <td>Tuesday</td>
+            <td>Students = 8 to 12</td>
+            <td>Organizer Name<br>Contact No.</td>
+          </tr>
+          <tr>
+            <td>Masjid</td>
+            <td>5 Villages</td>
+            <td>Dated</td>
+            <td>Wednesday</td>
+            <td>Students = Quran</td>
+            <td>Organizer Name<br>Contact No.</td>
+          </tr>
+          <tr>
+            <td>Madarsa</td>
+            <td>5 Villages</td>
+            <td>Dated</td>
+            <td>Thursday</td>
+            <td>Students = All</td>
+            <td>Organizer Name<br>Contact No.</td>
+          </tr>
+          <tr>
+            <td>Other Gents</td>
+            <td>Anywhere</td>
+            <td>Dated</td>
+            <td>Friday</td>
+            <td>Anyone</td>
+            <td>Organizer Name<br>Contact No.</td>
+          </tr>
+          <tr>
+            <td>Other Ladies</td>
+            <td>Anywhere</td>
+            <td>Dated</td>
+            <td>Saturday</td>
+            <td>Anyone</td>
+            <td>Organizer Name<br>Contact No.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="note">
-      (5 Villages Per Week x 50 Villages = 10 Weeks) (10 Weeks x 5 Times = 50 Weeks) Each Visit After 2.5 Months
+      (5 Villages Per Week x 50 Villages = 10 Weeks) • (10 Weeks x 5 Times = 50 Weeks) • Each Visit After 2.5 Months
     </div>
   </div>
 </body>
