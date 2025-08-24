@@ -6,18 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gaon List</title>
   <style>
-    /* Reset margin/padding and set font */
     * {
       box-sizing: border-box;
     }
 
     body {
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0 auto;
+      background: #0b1f17;
+      margin: 0;
       padding: 20px;
       text-align: center;
-       background-color: #0b1f17;
     }
 
     /* Village Names */
@@ -40,59 +38,57 @@
       min-width: 100px;
       flex: 1 1 120px;
       max-width: 180px;
+      text-align: center;
     }
 
     /* Centered Image Container */
     .photo-container {
-      max-width: 100%;
-      padding-left: 15%;
-      padding-right: 15%;
-      box-sizing: border-box;
-      margin: 0 auto;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 10px;
     }
 
     .photo-container img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       border: 3px solid goldenrod;
-      /* important for aspect ratio */
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
-
     /* Comment Section */
     .comment-section {
-    margin-bottom: 20px;
+      display: flex;
       justify-content: center;
       align-items: center;
       gap: 10px;
-
+      margin: 15px auto 30px;
+      max-width: 900px;
+      padding: 0 10px;
+      flex-wrap: wrap;
     }
 
     .comment-section label {
-      font-size: 20px;
-      font-weight: bold;;
-          background: #4CAF50;
-    padding: 17px;
-    border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      background: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      flex: 0 0 auto;
     }
 
     .comment-section input {
-      padding: 20px 300px;
+      flex: 1;
+      padding: 12px;
       border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 14px;
-      max-width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
       min-width: 200px;
     }
 
     /* Responsive tweaks */
     @media (max-width: 768px) {
-      .photo-container {
-        width: 90%;
-      }
-
       .village-list div {
         flex: 1 1 45%;
         max-width: none;
@@ -100,25 +96,20 @@
 
       .comment-section {
         flex-direction: column;
-        gap: 8px;
+        align-items: stretch;
       }
 
       .comment-section label {
-        text-align: left;
         width: 100%;
+        text-align: center;
       }
 
       .comment-section input {
         width: 100%;
-        flex: none;
       }
     }
 
     @media (max-width: 480px) {
-      .village-list {
-        gap: 10px;
-      }
-
       .village-list div {
         flex: 1 1 100%;
       }
@@ -136,128 +127,101 @@
     <div>Location 5</div>
     <div>Location 6</div>
   </div>
-<!-- box -->
+
+  <!-- Example Box -->
   <div class="photo-container">
     <img src="img/auditorium001.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c1">Comment:</label>
+    <input type="text" id="c1" placeholder="Type your comment here...">
   </div>
-  <!-- box -->
+
   <div class="photo-container">
     <img src="img/aud2.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c2">Comment:</label>
+    <input type="text" id="c2" placeholder="Type your comment here...">
   </div>
-  <!-- box -->
-  <div class="photo-container">
+    <div class="photo-container">
     <img src="img/aud3.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c1">Comment:</label>
+    <input type="text" id="c1" placeholder="Type your comment here...">
   </div>
 
   <div class="photo-container">
     <img src="img/aud4.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c2">Comment:</label>
+    <input type="text" id="c2" placeholder="Type your comment here...">
   </div>
-  <!-- box -->
-  <div class="photo-container">
+    <div class="photo-container">
     <img src="img/aud5.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c1">Comment:</label>
+    <input type="text" id="c1" placeholder="Type your comment here...">
   </div>
-  <!-- box -->
+
   <div class="photo-container">
     <img src="img/aud6.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c2">Comment:</label>
+    <input type="text" id="c2" placeholder="Type your comment here...">
   </div>
-
-   <div class="photo-container">
+    <div class="photo-container">
     <img src="img/aud7.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c1">Comment:</label>
+    <input type="text" id="c1" placeholder="Type your comment here...">
   </div>
-  <!-- box -->
+
   <div class="photo-container">
     <img src="img/aud8.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c2">Comment:</label>
+    <input type="text" id="c2" placeholder="Type your comment here...">
   </div>
-  <!-- box -->
-  <div class="photo-container">
+    <div class="photo-container">
     <img src="img/aud9.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c1">Comment:</label>
+    <input type="text" id="c1" placeholder="Type your comment here...">
   </div>
 
-   <div class="photo-container">
+  <div class="photo-container">
     <img src="img/aud10.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c2">Comment:</label>
+    <input type="text" id="c2" placeholder="Type your comment here...">
   </div>
-  <!-- box -->
-  <div class="photo-container">
+    <div class="photo-container">
     <img src="img/aud11.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c1">Comment:</label>
+    <input type="text" id="c1" placeholder="Type your comment here...">
   </div>
-  <!-- box -->
+
   <div class="photo-container">
     <img src="img/AUD120.jpg" alt="Village Photo">
   </div>
-
-  <!-- Comment Section -->
   <div class="comment-section">
-    <label for="comment">Comment:</label>
-    <input type="text" id="comment" placeholder="Type your comment here...">
+    <label for="c2">Comment:</label>
+    <input type="text" id="c2" placeholder="Type your comment here...">
   </div>
 
 
-</body>
+  <!-- Add more same structure for other photos -->
 
+</body>
 </html>
